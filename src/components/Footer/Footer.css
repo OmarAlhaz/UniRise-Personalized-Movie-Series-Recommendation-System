@@ -1,0 +1,59 @@
+/* Footer container */
+.footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border-top: 1px solid #1F2937;
+  }
+  
+  /* Responsive overrides for md screens */
+  @media (min-width: 768px) {
+    .footer {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  
+  /* Inner container to handle flex layout */
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  /* For md screens, switch layout to row and set height */
+  @media (min-width: 768px) {
+    .footer-inner {
+      flex-direction: row;
+      height: 6rem;
+    }
+  }
+  
+  /* Footer text styling */
+  .footer-text {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: #9ca3af;
+  }
+  
+  /* For md screens, align text to left */
+  @media (min-width: 768px) {
+    .footer-text {
+      text-align: left;
+    }
+  }
+  
+  /* Footer link styling */
+  .footer-link {
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: inherit;
+  }
+  

@@ -1,0 +1,113 @@
+.title-cards {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.title-cards h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+
+}
+
+.card-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+
+.card-list::-webkit-scrollbar {
+    display: none;
+}
+
+.card-list img {
+    width: 250px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.card-list .card {
+    position: relative;
+    text-decoration: none;
+}
+
+.card-list .card p {
+    color: #fff;
+    margin-top: 0.5rem;
+    text-align: center;
+    
+}
+
+@media (max-width: 800px) {
+    .title-cards {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .title-cards h2 {
+        font-size: 20px;
+    }
+    .card-list img {
+        width: 200px;
+    }
+    .card-list .card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title-cards h2 {
+        font-size: 15px;
+    }
+    .card-list img {
+        width: 165px;
+    }
+    .card-list .card p {
+        font-size: 10px;
+    }
+}
+
+/* Arrow button styling */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.836);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.arrow-button:hover {
+    background: white;
+}
+
+.arrow-button.left {
+    left: 1rem;
+}
+
+.arrow-button.right {
+    right: 1rem;
+}
+
+/* Ensure the container hides overflow */
+.card-img-container {
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+/* Transition on the image */
+.card-img {
+    transition: transform 300ms ease-in-out;
+    
+}
+
+/* On hover (via the group parent), scale the image */
+.group:hover .card-img {
+    transform: scale(1.05);
+}
+    

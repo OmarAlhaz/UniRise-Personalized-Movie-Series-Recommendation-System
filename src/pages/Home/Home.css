@@ -1,0 +1,300 @@
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Banner (Hero Background) Image */
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -50;
+  mask-image: linear-gradient(to right, transparent, black 75%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+
+.white-screen{
+    height: 100vh;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    position: relative;
+}
+/* Banner (Hero Background) Image */
+.banner-img-loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgb(0 0 0 / 0.7);
+    display: flex;
+    justify-content: center;
+    z-index: -50;
+
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+    background-size: 1000px 100%;
+  }
+  
+  @keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  padding: 2rem;   
+  padding-left: 2%;      
+  padding-right: 2%;
+  z-index: 10;
+  
+  z-index: 40;
+}
+
+/* HERO CAPTION (the text content over the banner) */
+.hero-caption {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+/* Responsive padding adjustments for the caption */
+@media (min-width: 768px) {
+  .hero-caption {
+    padding: 0 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-caption {
+    padding: 0 8rem;
+  }
+}
+
+/* Heading inside the hero caption */
+.hero-caption h1 {
+  margin-top: 1rem;
+  font-size: 3.75rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+}
+
+/* Paragraph styling for release info and overview */
+.hero-caption p {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+/* HERO BUTTONS CONTAINER */
+.hero-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Button base styling (for both buttons) */
+.hero-btns .btn {
+  border: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Play Button (Light) */
+.hero-btns .btn:not(.dark-btn) {
+  background: white;
+  color: black;
+  margin-right: 1rem;
+}
+.hero-btns .btn:not(.dark-btn):hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* More Info Button (Dark) */
+.hero-btns .btn.dark-btn {
+  background: rgba(107, 107, 110, 0.7);
+  color: white;
+  text-decoration: none;
+}
+.hero-btns .btn.dark-btn:hover {
+  background: #6d6d6e66;
+}
+
+/* Images inside the buttons */
+.hero-btns .btn img {
+  width: 25px;
+}
+
+.spacer {
+  height: 5rem;
+  width: 100%;
+}
+
+/* MORE CARDS SECTION (below the hero) */
+.more-cards {
+  background: #141414;
+  padding: 2rem;   
+  padding-left: 2%;      
+  padding-right: 2%; 
+}
+
+/* -----------------------------------------------------
+   Responsive adjustments 
+----------------------------------------------------- */
+
+/* For screens up to 1024px wide */
+@media (max-width: 1024px) {
+  .hero-caption h1 {
+    font-size: 3rem;
+  }
+  .hero-btns {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* For screens up to 800px wide */
+@media (max-width: 800px) {
+  .hero-caption {
+    padding: 0 1rem;
+  }
+  .hero-caption p {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+  .hero-btns .btn img {
+    width: 20px;
+  }
+  .more-cards {
+    padding-left: 4%;
+  }
+}
+
+/* For screens up to 500px wide */
+@media (max-width: 500px) {
+  .hero-btns .btn img {
+    width: 15px;
+  }
+  .hero-btns .btn {
+    padding: 0.25rem 0.625rem;
+    gap: 5px;
+    font-size: 0.625rem;
+  }
+  .caption-img {
+    display: none;
+  }
+}
+
+/* The container that covers the screen while loading */
+.recommend-loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+/* Loader spinner */
+.recommend-loader-spinner,
+.recommend-loader-spinner div {
+  box-sizing: border-box;
+}
+
+.recommend-loader-spinner {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  color: #ec7404;
+}
+
+.recommend-loader-spinner div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: currentColor;
+  animation: recommend-spinner 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.recommend-loader-spinner div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.recommend-loader-spinner div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.recommend-loader-spinner div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0s;
+}
+
+@keyframes recommend-spinner {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+/* A container for the "Show me recommended movies/shows" button */
+.recommend-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* The recommend button itself */
+.recommend-button {
+  background-color: rgba(107, 107, 110, 0.7);
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.recommend-button:hover {
+  background-color: #6d6d6e66;
+}
+

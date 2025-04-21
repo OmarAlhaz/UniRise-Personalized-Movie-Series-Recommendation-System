@@ -1,0 +1,206 @@
+/* Outer wrapper: background black, full height, white text */
+.history-wrapper {
+    background: #141414;
+    color: #fff;
+  }
+  
+  /* Navbar container for HistoryPage */
+  .history-navbar-container {
+    background: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 80px;
+  }
+  
+  /* Container for main content in HistoryPage */
+  .history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    margin-top: 80px;
+  }
+  
+  /* Heading for Search History */
+  .history-heading {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  /* No history found */
+  .history-no-history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24rem;
+  }
+  
+  .history-no-history-text {
+    font-size: 1.25rem; 
+  }
+  
+  /* Grid layout for search results */
+  .history-results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .history-results-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .history-results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .history-results-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Result card styling */
+  .history-result-card {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+  }
+  
+  /* Result image styling */
+  .history-result-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    object-fit: cover;
+  }
+  
+  /* Container for result text */
+  .history-result-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Result title styling */
+  .history-result-title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Result date styling */
+  .history-result-date {
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+  
+  /* Badge styling */
+  .history-badge {
+    padding: 0.25rem 0.75rem;
+    min-width: 5rem;
+    text-align: center;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin-left: auto;
+    color: #fff;
+  }
+  
+  .history-badge-movie {
+    background: #dc2626;
+  }
+  
+  .history-badge-tv {
+    background: #2563eb;
+  }
+  
+  .history-badge-person {
+    background: #16a34a;
+  }
+  
+  /* Trash icon styling */
+  .history-trash-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: fill 0.3s ease, color 0.3s ease;
+  }
+  
+  .history-trash-icon:hover {
+    fill: #ec7404;
+    color: #ec7404;
+  }
+
+  /* Loader container renamed for HistoryPage */
+.history-loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  /* Loader spinner renamed for HistoryPage */
+  .history-loader-spinner,
+  .history-loader-spinner div {
+    box-sizing: border-box;
+  }
+  
+  .history-loader-spinner {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #ec7404;
+  }
+  
+  .history-loader-spinner div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: currentColor;
+    animation: history-loader-spinner 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  
+  .history-loader-spinner div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  
+  .history-loader-spinner div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  
+  .history-loader-spinner div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0s;
+  }
+  
+  @keyframes history-loader-spinner {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+  

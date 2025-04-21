@@ -1,0 +1,382 @@
+/* Outer container for Player page */
+.player-wrapper {
+  background: #141414; 
+  min-height: 100vh;
+  color: #fff;
+}
+
+.navbar-container {
+    background: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 80px;
+  }
+
+.player-container {
+    margin-top: 65px;
+    max-width: 1600px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 4rem 1rem 4rem;
+  }
+
+/* Trailer controls container */
+.trailer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Trailer button styling */
+.trailer-button {
+  background: rgba(107, 114, 128, 0.7);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.trailer-button:hover {
+  background: #6b7280;
+}
+
+.trailer-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Video container styling */
+.video-container {
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  aspect-ratio: 16 / 9;
+}
+
+/* Responsive adjustments for video container padding */
+@media (min-width: 640px) {
+  .video-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .video-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+/* ReactPlayer styling */
+.react-player {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* No trailer message styling */
+.no-trailer {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.no-trailer .content-title {
+  font-weight: bold;
+  color: #ec7404;
+}
+
+/* Content details section */
+.content-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content-details {
+    flex-direction: row;
+  }
+}
+
+/* Details text */
+.details-text {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .details-text {
+    margin-bottom: 0;
+  }
+}
+
+.details-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.details-date {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem;
+}
+
+.adult {
+    --tw-text-opacity: 1;
+    color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+}
+
+.pg {
+    --tw-text-opacity: 1;
+    color: rgb(22 163 74 / var(--tw-text-opacity, 1));
+}
+
+.details-overview {
+  margin-top: 1rem;
+}
+
+.details-poster {
+  max-height: 600px;
+  border-radius: 0.375rem;
+  margin-top: 0;
+}
+
+/* Similar content section */
+.similar-content {
+  margin-top: 3rem;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.similar-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2.25;
+  text-align: left;
+}
+
+/* Wrapper for the slider and arrows */
+.similar-slider-wrapper {
+  position: relative;
+}
+
+/* Similar slider container */
+.similar-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  padding-bottom: 1rem;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.similar-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Similar card styling */
+.similar-card {
+  width: 13rem;
+  flex-shrink: 0;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+}
+
+.similar-card-img {
+  width: 100%;
+  height: 321px;
+  border-radius: 0.375rem;
+  transition: transform 300ms ease-in-out;
+}
+
+.similar-card-img:hover {
+  transform: scale(1.05);
+}
+
+.similar-card-title {
+  line-height: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.similar-slider-wrapper:hover .similar-arrow {
+    opacity: 1;
+}
+
+/* Arrow buttons for similar slider */
+.similar-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #ec7404;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+
+.similar-arrow.left {
+  left: 0.5rem;
+}
+
+.similar-arrow.right {
+  right: 0.5rem;
+}
+
+
+.error-message {
+  text-align: center;
+  padding: 20px;
+  margin-top: 300px;
+}
+
+/* Shimmer effect for skeleton */
+.loading-skeleton {
+  width: 200px;
+  height: 200px;
+  background: #333;
+  border-radius: 10px;
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .details-title {
+    font-size: 2rem;
+  }
+  .react-player {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .details-title {
+    font-size: 1.5rem;
+  }
+  .trailer-button {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Shimmer effect (used on each skeleton element) */
+  .shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+    background-size: 1000px 100%;
+  }
+  
+  .skel-1 {
+    background-color: #374151;
+    border-radius: 0.375rem;
+    width: 10rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skel-2 {
+    background-color: #374151;
+    border-radius: 0.375rem;
+    width: 100%;
+    height: 24rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skel-3 {
+    background-color: #374151;
+    border-radius: 0.375rem;
+    width: 75%;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skel-4 {
+    background-color: #374151;
+    border-radius: 0.375rem;
+    width: 50%;
+    height: 1.5rem;
+    margin-bottom: 1rem; 
+  }
+  
+  .skel-5 {
+    background-color: #374151;
+    border-radius: 0.375rem;
+    width: 100%;
+    height: 6rem;
+  }
+
+  .player-loading,.player-error {
+    min-height: 100vh;
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+    padding: 2.5rem;
+
+  }
+
+  /* Minimal skeleton for the "Similar" section */
+.skel-1 {
+  width: 150px;
+  height: 20px;
+  background-color: #374151;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+  background-size: 1000px 100%;
+}
+.skel-2 {
+  width: 100%;
+  height: 200px;
+  background-color: #374151;
+  border-radius: 0.375rem;
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #2c2c2c 4%, #333 25%, #2c2c2c 36%);
+  background-size: 1000px 100%;
+}
+
+  
