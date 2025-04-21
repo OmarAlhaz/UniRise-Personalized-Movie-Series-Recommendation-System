@@ -38,6 +38,3 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
-
-# Configs
-config.js
